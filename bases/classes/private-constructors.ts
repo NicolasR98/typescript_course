@@ -33,7 +33,7 @@
     
     apocalipsis1.changeName('Nicolas');
 
-    console.log(apocalipsis1, apocalipsis2, apocalipsis3);
+    // console.log(apocalipsis1, apocalipsis2, apocalipsis3);
     
 
     // How a normal class is being instanced

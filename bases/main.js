@@ -1,95 +1,71 @@
 "use strict";
+var __rest = (this && this.__rest) || function (s, e) {
+    var t = {};
+    for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p) && e.indexOf(p) < 0)
+        t[p] = s[p];
+    if (s != null && typeof Object.getOwnPropertySymbols === "function")
+        for (var i = 0, p = Object.getOwnPropertySymbols(s); i < p.length; i++) {
+            if (e.indexOf(p[i]) < 0 && Object.prototype.propertyIsEnumerable.call(s, p[i]))
+                t[p[i]] = s[p[i]];
+        }
+    return t;
+};
 (() => {
-    class Mutant {
-        constructor(name, realName) {
-            this.name = name;
-            this.realName = realName;
+    const flash = {
+        name: 'Iron man',
+        age: 45,
+        powers: ['Nice suit']
+    };
+    const superman = {
+        name: 'Clark Kent',
+        age: 65,
+        powers: ['Super Strength'],
+        getName() {
+            return this.name;
         }
-    }
-    ;
-    class Xmen extends Mutant {
-        saveWorld() {
-            return 'World saved';
-        }
-    }
-    class Villain extends Mutant {
-        conquerWorld() {
-            return `World conquered`;
-        }
-    }
-    class Person {
-    }
-    const wolverine = new Xmen('Wolverine', 'Logan');
-    const magneto = new Villain('Magneto', 'Magnus');
-    const normalPerson = new Person();
-    const printName = (character) => {
-        console.log(character.realName);
+    };
+    const avengers = {
+        nick: 'Samuel',
+        ironman: 'Robert',
+        vision: 'Paul',
+        active: true,
+        power: 100,
+    };
+    const printAvengers = (_a) => {
+        var { nick } = _a, rest = __rest(_a, ["nick"]);
+        console.log(nick, rest);
     };
 })();
 (() => {
-    class Avenger {
-        constructor(name, team, realname) {
-            this.name = name;
-            this.team = team;
-            this.realname = realname;
-        }
-    }
-    Avenger.avgAge = 35;
-    const antmant = new Avenger('Antman', 'Capitan', 'Scott');
-    Avenger.avgAge;
-})();
-(() => {
-    class Avenger {
-        constructor(name, realName) {
+    class Mutant {
+        constructor(age, name, realName) {
+            this.age = age;
             this.name = name;
             this.realName = realName;
-            console.log('Avenger constructor invoked');
         }
-        getFullName() {
+        mutantPower(id) {
             return `${this.name} ${this.realName}`;
         }
     }
-    class Xmen extends Avenger {
-        constructor(name, realName, isMutant) {
-            super(name, realName);
-            this.isMutant = isMutant;
-            console.log('Xmen constructor invoked');
-        }
-        get fullName() {
-            return `${this.name} - ${this.realName}`;
-        }
-        ;
-        set fullName(name) {
-            if (name.length < 3) {
-                throw new Error('The name must be longer than 3 characters');
-            }
-            this.name = name;
-        }
-        ;
-        getFullNameFromXmen() {
-            console.log(super.getFullName());
-        }
-    }
 })();
 (() => {
-    class Apocalipsis {
-        constructor(name) {
-            this.name = name;
+    const client = {
+        name: 'Nicolas',
+        age: 24,
+        address: {
+            id: 123,
+            zip: 'ABC 123',
+            city: 'CS'
+        },
+        getFullAddress(id) {
+            return `${this.address.city} - ${id}`;
         }
-        static invokeApocalipsis() {
-            if (!Apocalipsis.instance) {
-                Apocalipsis.instance = new Apocalipsis('I am the unique Apocalipsis');
-            }
-            return Apocalipsis.instance;
-        }
-        changeName(name) {
-            this.name = name;
-        }
-    }
-    const apocalipsis1 = Apocalipsis.invokeApocalipsis();
-    const apocalipsis2 = Apocalipsis.invokeApocalipsis();
-    const apocalipsis3 = Apocalipsis.invokeApocalipsis();
-    apocalipsis1.changeName('Nicolas');
-    console.log(apocalipsis1, apocalipsis2, apocalipsis3);
+    };
+})();
+(() => {
+    let sumTwoNumbers;
+    sumTwoNumbers = (a, b) => {
+        return a + b;
+    };
 })();
 //# sourceMappingURL=main.js.map
