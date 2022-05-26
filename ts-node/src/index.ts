@@ -1,6 +1,11 @@
-import { getPokemon } from './generics/get-pokemons';
+import { Pokemon } from "./decorators/pokemon-class";
 
-getPokemon(2)
-    .then(resp => console.log(resp.sprites.front_default))
-    .catch(err => console.error(err))
-    .finally(() => console.log('End of communication'))
+const charmander = new Pokemon('Charmander');
+
+// This will throw an error because our decorator, seals the class
+// (Pokemon.prototype as any).newName = 'Pikachu'
+
+console.log(charmander);
+// charmander.publicApi = 'nicolas'
+charmander.savePokemonToDB(77)
+
