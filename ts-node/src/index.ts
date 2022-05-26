@@ -1,12 +1,6 @@
-import { Hero as SuperHero } from "./classes/Hero";
+import { getPokemon } from './generics/get-pokemons';
 
-const ironman = new SuperHero('Ironman', 3, 45);
-
-console.log(ironman.power);
-
-
-
-
-
-
-
+getPokemon(2)
+    .then(resp => console.log(resp.sprites.front_default))
+    .catch(err => console.error(err))
+    .finally(() => console.log('End of communication'))
